@@ -27,7 +27,17 @@ const StyledForm = styled(motion.div)`
       background: none;
       border: none;
       padding: 2rem;
-      color: #B1AFCD;
+      color: #ffffff;
+      background: linear-gradient(
+      140deg
+      , rgba(255,64,154,1) 0%, rgba(196,56,239,1) 63%);
+      border-radius: 5rem;
+      cursor: pointer;
+      margin-right: 3rem;
+      span {
+        font-weight: 600;
+        font-size: 1.8rem;
+      }
     }
   }
 `;
@@ -55,17 +65,7 @@ const StyledLabels = styled(motion.div)`
 `;
 
 const StyledButton = styled(motion.button)`
-border: 2px solid #c251ac !important;
-  span {
-    background: linear-gradient(
-    140deg
-    ,rgba(255,64,154,1) 0%,rgba(196,56,239,1) 63%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-box-decoration-break: clone;
-    font-weight: 600;
-    font-size: 1.8rem;
-  }
+
 `;
 
 const StyledButtonBack = styled(motion.button)`
