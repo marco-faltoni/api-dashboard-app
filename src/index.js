@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { GlobalStyles } from "./GlobalStyle";
 // redux setup
 import {createStore, applyMiddleware, compose} from 'redux';
-import rootReducers from './reducers';
+// import rootReducers from './reducers';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 
