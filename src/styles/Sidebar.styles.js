@@ -10,9 +10,10 @@ const StyledSidebar = styled.div`
   align-items: center;
   background: linear-gradient(180deg, rgb(30, 27, 75) 0%, rgba(29,26,67,1) 87%, rgba(29,26,67,1) 100%);
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     min-width: 10rem;
     font-weight: 500;
+    color: #6F6C99;
   }
   .logo {
     display: flex;
@@ -25,10 +26,35 @@ const StyledSidebar = styled.div`
       padding: 0;
     }
   }
-  .home, .chart {
+  .home, .chart, .add  {
     position: relative;
     width: 100%;
   }
+  .add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 0;
+    cursor: pointer;
+    i {
+    margin-right: 5rem;
+      svg {
+        width: 2rem;
+      }
+      @media (max-width: 1500px) {
+        margin-right: 3rem;
+      }
+    }
+    h1 {
+      background: linear-gradient(140deg, rgba(255,64,154,1) 0%, rgba(196,56,239,1) 63%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-box-decoration-break: clone;
+      font-weight: 500;
+    }
+  }
+
   a {
     text-decoration: none;
     color: unset;
@@ -37,16 +63,22 @@ const StyledSidebar = styled.div`
     align-items: center;
     width: 100%;
     padding: 4rem 0;
-    img {
+    i {
       margin-right: 5rem;
-      width: 2.5rem;
+      svg {
+        width: 2rem;
+      }
       @media (max-width: 1500px) {
         margin-right: 3rem;
       }
     }
     &.active {
+      i svg path {
+        fill: #4A3DFF;
+      }
       h1 {
         font-weight: 700;
+        color: #FFFFFF;
       }
       &::after {
         content: "";

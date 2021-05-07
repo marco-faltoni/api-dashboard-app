@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle `
       width: 100%;
       display: flex;
       justify-content: space-between;
+      position: relative;
       .user-no-position {
         position: absolute;
         top: 50%;
