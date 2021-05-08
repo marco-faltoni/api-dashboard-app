@@ -32,7 +32,7 @@ const Form = () => {
     } else {
       dispatch(addProduct(titleInput, descInput, categoryInput, priceInput, employeeInput));
       dispatch(hideForm());
-      alert.success("Prodotto aggiunto con successo!");
+      alert.success("Prodotto aggiunto con successo! Aspetta il ricarimento della pagina :)");
     }
   }
 

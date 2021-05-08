@@ -42,6 +42,7 @@ const StyledNav = styled(motion.div)`
     display: flex;
     align-items: center;
     i {
+      cursor: pointer;
       svg {
         width: 2.2rem;
       }
@@ -49,6 +50,14 @@ const StyledNav = styled(motion.div)`
     }
     .reload path {
       fill: #5B5A99;
+    }
+  }
+  .custom-tooltip {
+    padding: 1rem 2rem;
+    border-radius: 0.7rem;
+    background: #5B5A99;
+    h3 {
+      font-size: 1.3rem;
     }
   }
 `;
@@ -67,6 +76,10 @@ const StyledCards = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-gap: 6rem 9rem;
+  &.column-view {
+    grid-template-columns: repeat(auto-fill, minmax(53rem, 1fr));
+    transition: all 0.6s ease;
+  }
 `;
 
 
@@ -83,6 +96,7 @@ const StyledCard = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.6s ease;
   .a-tool {
     position: absolute;
     cursor: pointer;
@@ -98,6 +112,18 @@ const StyledCard = styled(motion.div)`
           transition: all 0.6s ease;
         }
       }
+    }
+  }
+
+  &.column-view {
+    min-height: 17rem;
+    flex-direction: row;
+    padding: 2rem 5rem;
+    padding-right: 3rem;
+    transition: all 0.6s ease;
+    .a-tool {
+      top: 15%;
+      right: 3%;
     }
   }
 
@@ -134,6 +160,20 @@ const StyledTitle = styled(motion.div)`
     font-size: 1.3rem;
     color: #B1AFCD;
     font-weight: 500;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  &.column-view {
+    align-items: flex-start;
+    min-width: 25rem;
+    transition: all 0.6s ease;
+    p {
+      max-width: 25rem;
+      -webkit-line-clamp: 4;
+    }
   }
 `;
 
@@ -157,6 +197,10 @@ const StyledReview = styled(motion.div)`
     color: #B1AFCD;
     font-weight: 500;
   }
+  &.column-view {
+    width: unset;
+    transition: all 0.6s ease;
+  }
 `;
 
 const StyledCategory = styled(motion.div)`
@@ -171,11 +215,17 @@ const StyledCategory = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.6s ease;
   i {
     display: flex;
     svg {
       height: 4rem;
     }
+  }
+  &.column-view {
+    top: 48%;
+    left: 0%;
+    transition: all 0.6s ease;
   }
 `;
 
