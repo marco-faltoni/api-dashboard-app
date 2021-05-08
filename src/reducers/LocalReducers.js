@@ -2,6 +2,8 @@ const initState = {
   store: [],
   products: [],
   isLoading: true,
+  isFormOpen: false,
+  newProduct: [],
 }
 
 export const localReducer = (state=initState, action) => {
@@ -11,12 +13,33 @@ export const localReducer = (state=initState, action) => {
           ...state, 
           store: action.payload.store,
           products: action.payload.products,
-          isLoading: false
+          isLoading: false,
+          isFormOpen: false,
+        };
+      case "FETCH_PRODUCT":
+        return {
+          ...state, 
+          products: action.payload.products,
         };
       case "LOADING":
         return{
           ...state,
           isLoading: true,
+        };
+      case "NEW_PRODUCT":
+        return{
+          ...state,
+          newProduct: action.payload.addedProducts
+        };
+      case "FORM_VISIBLE":
+        return{
+          ...state,
+          isFormOpen: true,
+        };
+      case "FORM_NOT_VISIBLE":
+        return{
+          ...state,
+          isFormOpen: false,
         };
       default:
           return {...state};

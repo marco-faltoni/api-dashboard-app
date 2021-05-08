@@ -69,6 +69,7 @@ const StyledCards = styled(motion.div)`
   grid-gap: 6rem 9rem;
 `;
 
+
 const StyledCard = styled(motion.div)`
   min-height: 30rem;
   background: rgba(36, 33, 81, 0.74);
@@ -82,21 +83,24 @@ const StyledCard = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  .menu-icon {
+  .a-tool {
     position: absolute;
     cursor: pointer;
     top: 12%;
     right: 5%;
     transform: translate(-50%, -50%);
-    transition: all 0.8s ease;
-    &:hover {
+    .menu-icon {
       transition: all 0.8s ease;
-      path {
-        fill: white;
-        transition: all 0.6s ease;
+      &:hover {
+        transition: all 0.8s ease;
+        path {
+          fill: white;
+          transition: all 0.6s ease;
+        }
       }
     }
   }
+
   #price {
     font-size: 3.2rem;
     display: flex;
@@ -105,6 +109,16 @@ const StyledCard = styled(motion.div)`
       font-size: 1.6rem;
       padding-top: 0.5rem;
       padding-right: 0.5rem;
+    }
+  }
+  .custom-tooltip {
+    padding: 1rem 2rem;
+    border-radius: 0.7rem;
+    background: #5B5A99;
+    pointer-events: unset;
+    h3 {
+      cursor: pointer;
+      font-size: 1.3rem;
     }
   }
 `;
@@ -173,5 +187,5 @@ export {
   StyledOverlay,
   StyledTitle,
   StyledReview,
-  StyledCategory
+  StyledCategory,
 };

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 // Redux
 import { useSelector, useDispatch} from 'react-redux';
 // actions
-// import {loadLocation} from '../actions/LocalWeatherAction';
+import {deleteProduct} from '../actions/LocalStoreAction';
 import {
   StyledContainer,
   StyledNav,
@@ -24,11 +24,22 @@ import { Link } from "react-router-dom";
 // framer motion
 import {motion} from "framer-motion";
 // import { pageAnimation, pageAnimationMobile, fade } from "../animation";
+import { useAlert } from "react-alert";
+import ReactTooltip from "react-tooltip";
 
 const Home = () => {
 
+  const dispatch = useDispatch();
+
+  const alert = useAlert();
+
   // getting back the data from redux
   const {store, products, isLoading} = useSelector((store) => store.store);
+
+  const deleteItem = (id) => { 
+    dispatch(deleteProduct(id));
+    alert.success("Prodotto eliminato con successo!");
+  }
 
   return (
     <StyledContainer >
@@ -54,14 +65,27 @@ const Home = () => {
       <StyledOverlay>
         <StyledCards>
           {products.map((item, key) => {
-            console.log(item.data.reviews);
+            // console.log(item.data.reviews);
             return (
               <StyledCard key={key}>
                 <StyledTitle>
                   <h3>{item.data.title}</h3>
                   <p>{item.data.description}</p>
                 </StyledTitle>
-                <Menu className="menu-icon" />
+                <a className="a-tool" data-tip data-for={`${key}`} data-event='click focus'>
+                  <Menu className="menu-icon" />
+                </a>
+                <ReactTooltip
+                  id={`${key}`}
+                  place="bottom"
+                  effect="solid"
+                  textColor='#fff' 
+                  backgroundColor='#5B5A99'
+                  className="custom-tooltip"
+                  globalEventOff='click' 
+                >
+                  <h3 onClick={() => deleteItem(item.id)}>Cancella prodotto</h3>
+                </ReactTooltip>
                 <StyledReview>
                   <div className="empl">
                     <h3>Dipendente</h3>

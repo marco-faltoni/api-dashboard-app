@@ -1,4 +1,8 @@
 import React, {useState} from "react";
+// Redux
+import {useDispatch, useSelector} from 'react-redux';
+// actions
+import {loadForm} from '../actions/LocalStoreAction';
 // import routing
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -12,16 +16,16 @@ import Form from '../components/Form';
 import {ReactComponent as HomeIcon} from '../assets/home.svg';
 import {ReactComponent as ChartIcon} from '../assets/chart.svg';
 import {ReactComponent as PlusIcon} from '../assets/plus.svg';
-// Redux
-import {useSelector} from 'react-redux';
 
 const SideBar = () => {
   const { pathname } = useLocation();
-  const [open, setOpen] = useState(false);
-  const goToCurrentSlide = () => {
-    console.log('yes');
-    setOpen(true);
-  };
+
+  const dispatch = useDispatch();
+
+  // dispatch(loadForm());
+
+  // getting back the data from redux
+  const {store, products, isLoading, isFormOpen} = useSelector((store) => store.store);
 
   return (
     <StyledSidebar>
@@ -45,12 +49,14 @@ const SideBar = () => {
         </Link>
       </div>
       <div className="add">
-        <i>
+        <i> 
           <PlusIcon />
         </i>
-        <h1 onClick={() => goToCurrentSlide()}>Add Product</h1>
+        <h1 onClick={() => dispatch(loadForm())}>Aggiungi Prodotto</h1>
       </div>
-      <Form open={open} setOpen={setOpen}/>
+      {isFormOpen && (
+        <Form />
+      )}
       
     </StyledSidebar>
   );

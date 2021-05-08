@@ -11,7 +11,7 @@ const StyledSidebar = styled.div`
   background: linear-gradient(180deg, rgb(30, 27, 75) 0%, rgba(29,26,67,1) 87%, rgba(29,26,67,1) 100%);
   h1 {
     font-size: 1.5rem;
-    min-width: 10rem;
+    min-width: 13rem;
     font-weight: 500;
     color: #6F6C99;
   }
