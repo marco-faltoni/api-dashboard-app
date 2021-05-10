@@ -25,15 +25,15 @@ ATTENZIONE: per poter far funzionare la web-app, assicurarsi di recpurare l'API 
 
 - L’applicazione è basata su Create React App, seguendo le best practice di React.
 
-- L’applicazione simula una dashboard di un dipendente di un negozio, in cui vengono visualizzati il nome dello shop e si suoi relativi prodotti.
+- L’applicazione simula una dashboard di un dipendente di un negozio, in cui vengono visualizzati il nome dello shop e i suoi relativi prodotti.
 
 - Le informazioni dei prodotti vengono recuparate dall'API di riferimento e vengono mostrati titolo, descrizione, recensioni, categoria e prezzo.
 
 - I prodotti possono essere cancellati tramite il menu a tendina.
 
-- L'utente può aggiungere un nuovo prodotto tramite la CTA corrispondente, e inserite obbligatoriamente tutte le informazioni necessarie all'API per aggiungere nel database il prodotto.
+- L'utente può aggiungere un nuovo prodotto tramite la CTA corrispondente, e devono inserite obbligatoriamente tutte le informazioni necessarie all'API per aggiungere nel database il prodotto.
 
-- L'applicazione presente una UI/UX user-friendly.
+- L'applicazione presenta una UI/UX user-friendly.
 
 ## Funzionalità Aggiuntive sviluppate
 
