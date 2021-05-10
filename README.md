@@ -1,70 +1,40 @@
+# React API Dashboard
+
+Dashboard realizzata tramite il Framework React e alcune sue librerie e plugin come Axios, Redux, React Router, Hooks.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Come eseguire il progetto in locale
 
-In the project directory, you can run:
+Scaricare la repository su una cartella a scelta del prprio PC.
+Aprire la repo da terminale con il proprio IDE preferito.
 
+per installare le dipendenze (assicurarsi di aver installato NodeJS)
+### `npm install`
+
+per far partire il progetto in locale
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ATTENZIONE: per poter far funzionare la web-app, assicurarsi di recpurare l'API Keys e aggiungerla al file .env (da creare dentro la repo) scrivendo le seguenti chiavi: 
+- REACT_APP_DASHBOARD_API=AGGIUNGERE_KEY
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Funzionalità Obbligatorie sviluppate
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- L’applicazione è basata su Create React App, seguendo le best practice di React.
 
-### `npm run build`
+- L’applicazione simula una dashboard di un dipendente di un negozio, in cui vengono visualizzati il nome dello shop e si suoi relativi prodotti.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Le informazioni dei prodotti vengono recuparate dall'API di riferimento e vengono mostrati titolo, descrizione, recensioni, categoria e prezzo.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- I prodotti possono essere cancellati tramite il menu a tendina.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- L'utente può aggiungere un nuovo prodotto tramite la CTA corrispondente, e inserite obbligatoriamente tutte le informazioni necessarie all'API per aggiungere nel database il prodotto.
 
-### `npm run eject`
+- L'applicazione presente una UI/UX user-friendly.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Funzionalità Aggiuntive sviluppate
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- L’utente, tramite le apposite icone, può cambiare la visualizzazione e il layout dei prodotti, e vederli tramite griglie o tramite colonne. I prodotti cambieranno layout automaticamente.
