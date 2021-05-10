@@ -16,11 +16,6 @@ export const localReducer = (state=initState, action) => {
           isLoading: false,
           isFormOpen: false,
         };
-      case "FETCH_PRODUCT":
-        return {
-          ...state, 
-          products: action.payload.products,
-        };
       case "LOADING":
         return{
           ...state,

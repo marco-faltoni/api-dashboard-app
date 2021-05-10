@@ -4,7 +4,10 @@ import axios from 'axios';
 export const loadStoreAndProducts = () => (dispatch) => {
   let storeData;
   let productData;
-  console.log('hell yes');
+  
+  dispatch({
+    type: "LOADING"
+  })
 
   const apiStore = `http://us-central1-test-b7665.cloudfunctions.net/api/stores/${process.env.REACT_APP_DASHBOARD_API}`;
 

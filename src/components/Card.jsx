@@ -6,13 +6,14 @@ import {deleteProduct} from '../actions/LocalStoreAction';
 import { useAlert } from "react-alert";
 import ReactTooltip from "react-tooltip";
 import {ReactComponent as Cookie} from '../assets/cookie.svg';
+import {ReactComponent as Cake} from '../assets/candy.svg';
 import {ReactComponent as Menu} from '../assets/menu.svg';
 import {
   StyledCard,
   StyledTitle,
   StyledReview,
   StyledCategory
-} from "../styles/Home.styles";
+} from "../styles/Card.styles";
 
 const Card = ({key, title, description, id, emp, category, price, reviews, column}) => {
 
@@ -65,23 +66,22 @@ const Card = ({key, title, description, id, emp, category, price, reviews, colum
       </StyledReview>
       <h3 id="price"> <span>€</span> {price}</h3>
       <StyledCategory className={column ? "column-view" : ""}>
-        <a data-for={`category ${id}`}>
+        <a data-tip data-for={`category ${id}`}>
           <i>
-            <Cookie />
+            <Cake />
           </i>  
         </a>
-        <ReactTooltip
-          id={`category ${id}`}
-          place="bottom"
-          effect="solid"
-          textColor='#fff' 
-          backgroundColor='#5B5A99'
-          className="custom-tooltip"
-        >
-          <h3>{category}</h3>
-        </ReactTooltip>
-
       </StyledCategory>
+      <ReactTooltip
+        id={`category ${id}`}
+        place="bottom"
+        effect="solid"
+        textColor='#fff' 
+        backgroundColor='#5B5A99'
+        className="custom-tooltip"
+      >
+        <h3>{category}</h3>
+      </ReactTooltip>
     </StyledCard>
   )
 }

@@ -5,9 +5,19 @@ const GlobalStyles = createGlobalStyle `
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #6F6C99;
+    }
+    &::-webkit-scrollbar-track {
+      background: #59588D;
+    }
   }
   html {
     font-size: 62.5%;
+
   }
   body {
     /* font-family: 'Lato', sans-serif; rgba(45,40,110,1) */

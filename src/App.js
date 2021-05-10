@@ -55,6 +55,9 @@ function App() {
             <Chart  />
           </Route>
         </Switch>
+        {isLoading && (
+          <Loader  />
+        )}
       </AlertProvider>
     </div>
   );

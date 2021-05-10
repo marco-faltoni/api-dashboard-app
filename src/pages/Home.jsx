@@ -37,66 +37,65 @@ const Home = () => {
         </div>
         
         <div className="icons">
-          <i onClick={() => setColumn(false)}>
+          <i className="grid-icon" onClick={() => setColumn(false)}>
             <a data-tip data-for={"grid"} >
               <Grid />
             </a>
           </i>
-        <ReactTooltip
-          id={"grid"}
-          effect="solid"
-          textColor='#fff' 
-          backgroundColor='#5B5A99'
-          className="custom-tooltip"
-          globalEventOff='click' 
-        >
-          <h3 >Vista a Griglia</h3>
-        </ReactTooltip>
-        
-          <i onClick={() => setColumn(true)}>
-            <a data-tip data-for={"column"} >
-              <Column />
-            </a>
-          </i>
+          <ReactTooltip
+            id={"grid"}
+            effect="solid"
+            textColor='#fff' 
+            backgroundColor='#5B5A99'
+            className="custom-tooltip"
+            globalEventOff='click' 
+          >
+            <h3 >Vista a Griglia</h3>
+          </ReactTooltip>
+          
+            <i className="column-icon" onClick={() => setColumn(true)}>
+              <a data-tip data-for={"column"} >
+                <Column />
+              </a>
+            </i>
 
-        <ReactTooltip
-          id={"column"}
-          effect="solid"
-          textColor='#fff' 
-          backgroundColor='#5B5A99'
-          className="custom-tooltip"
-          globalEventOff='click' 
-        >
-          <h3>Vista a Colonna</h3>
-        </ReactTooltip>
-        <i>
-          <Reload className="reload" />
-        </i>
+          <ReactTooltip
+            id={"column"}
+            effect="solid"
+            textColor='#fff' 
+            backgroundColor='#5B5A99'
+            className="custom-tooltip"
+            globalEventOff='click' 
+          >
+            <h3>Vista a Colonna</h3>
+          </ReactTooltip>
+          {/* <i>
+            <Reload className="reload" />
+          </i> */}
         </div>
         <img src={user} alt="prop-pic" title="prop-pic"/>
       </StyledNav>
-      <StyledOverlay>
-        <StyledCards className={column ? "column-view" : ""}>
-          {products.map((item, key) => {
-            // console.log(item.data.reviews);
-            return (
-              <Card 
-                key={key} 
-                title={item.data.title} 
-                description={item.data.description} 
-                id={item.id} 
-                emp={item.data.employee}
-                category={item.data.category}
-                price={item.data.price}
-                reviews={item.data.reviews} 
-                column={column}
-              />
-            );
-          })}
-          
-        </StyledCards>
-      </StyledOverlay>
-      
+        <StyledOverlay>
+          <StyledCards className={column ? "column-view" : ""}>
+            {products.map((item, key) => {
+              // console.log(item.data.reviews);
+              return (
+                <Card 
+                  key={key} 
+                  title={item.data.title} 
+                  description={item.data.description} 
+                  id={item.id} 
+                  emp={item.data.employee}
+                  category={item.data.category}
+                  price={item.data.price}
+                  reviews={item.data.reviews} 
+                  column={column}
+                />
+              );
+            })}
+            
+          </StyledCards>
+        </StyledOverlay>
     </StyledContainer>
   );
 };
