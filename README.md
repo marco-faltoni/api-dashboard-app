@@ -1,6 +1,7 @@
 # React API Dashboard
 
 Dashboard realizzata tramite il Framework React e alcune sue librerie e plugin come Axios, Redux, React Router, Hooks.
+Il Progetto può essere visionato anche attraverso la mia pagina personale di GitHub [@marco-faltoni](https://github.com/marco-faltoni)
 
 # Getting Started with Create React App
 
